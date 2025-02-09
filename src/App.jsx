@@ -35,7 +35,7 @@ function App() {
     }
     console.log(projectsState)
  return(<main className=' bg-[#EFE9D5] h-screen  flex gap-8' >
-    <SideBar onAddProject={handleStartAddProject} />
+    <SideBar onAddProject={handleStartAddProject} projects={projectsState.projects} />
    {projectsState["selectedProjectId"]===null?<NewProject onSave={handleAddProject} />:<NoProjectSelected onAddProject={handleStartAddProject} /> }
  </main>)
 }

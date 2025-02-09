@@ -10,7 +10,7 @@ export default function NewProject({onSave}){
         const enteredDescription = description.current.value;
         const enteredDueDate = dueDate.current.value;
 
-        onSave({enteredTitle,enteredDescription,enteredDueDate})
+        onSave({title:enteredTitle,description:enteredDescription,dudeDate:enteredDueDate})
         //validation  . if not valid show modal
     }
 
