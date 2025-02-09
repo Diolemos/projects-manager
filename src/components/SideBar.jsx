@@ -7,7 +7,7 @@ export default function SideBar({onAddProject,projects}) {
       <div>
       <Button onClick={onAddProject}  >+</Button>
       </div>
-      <ul className="mt-4" >
+      <ul className="mt-6" >
   {projects.map(project => (
     <li key={project.id}>
       <button className="cursor-pointer w-full text-left px-2 py-1 rounded-sm my-1 bg-green-900 hover:bg-green-800 text-stone-100 " >
