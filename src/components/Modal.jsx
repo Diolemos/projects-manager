@@ -10,11 +10,11 @@ export default function Modal({ ref, children }) {
     };
   });
   return createPortal(
-    <dialog ref={dialogRef}  className="backdrop:bg-stone-900/90  rounded-md p-8 fixed inset-0 m-auto" >
+    <dialog ref={dialogRef}  className="backdrop:bg-stone-900/90  rounded-md pt-8 px-12 fixed inset-0 m-auto " >
       {children}
 
       <form method="dialog" className="text-center">
-      <button className= "cursor-pointer mt-8  text-white bg-green-950 p-2 rounded">Close</button>
+      <button className= "cursor-pointer mt-8   text-white bg-green-950 p-2 mb-4 rounded shadow-lg transition-all duration-150 active:scale-90 active:shadow-md">Close</button>
       </form>
     </dialog>,
 
