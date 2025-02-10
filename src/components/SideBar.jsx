@@ -9,16 +9,16 @@ export default function SideBar({onAddProject,projects, onSelectProject, selecte
       </div>
       <ul className="mt-6" >
   {projects.map(project =>{
-      let cssClasses = "cursor-pointer w-full text-left px-2 py-1 rounded-sm my-1  "
+      let cssClasses = "cursor-pointer w-full text-left px-2 py-1 rounded-sm my-1   "
       if (project.id === selectedProjectId){
-        cssClasses += ' '
+        cssClasses += ' bg-green-800 text-teal-100'
       }else{
-        cssClasses += ' bg-green-900 hover:bg-green-800 text-stone-100'
+        cssClasses += ' bg-green-900 hover:bg-green-800  text-stone-100'
       }
     return (
     <li key={project.id}>
       <button onClick={()=>onSelectProject(project.id)} 
-      className="cursor-pointer w-full text-left px-2 py-1 rounded-sm my-1 bg-green-900 hover:bg-green-800 text-stone-100 " >
+      className={cssClasses} >
         {project.title}
       </button>
     </li>
