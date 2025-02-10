@@ -12,6 +12,20 @@ function App() {
         selectedProjectId: undefined,
         projects: []
     })
+
+
+    const handleDeleteProject = ()=>{
+            if(confirm("Delete this item ?")){
+                setProjectState(prev=>{
+                    return{
+                        ...prev,
+                        selectedProjectId: undefined,
+                        projects: prev.projects.filter(project=>project.id !==prev.selectedProjectId)
+                    } 
+            })
+            }else return;
+         }
+
     const handleStartAddProject =()=>{ //renders form
         
         setProjectState(prev=>{
@@ -56,7 +70,7 @@ function App() {
     }
     let selectedProject = projectsState.projects.find(project =>project.id === projectsState.selectedProjectId)
 
-    let content =(<ProjectDetails project={selectedProject} />) ;
+    let content =(<ProjectDetails project={selectedProject} onDeleteProject={handleDeleteProject} />) ;
 
     if(projectsState.selectedProjectId === null){
         content = (<NewProject onSave={handleAddProject} onCancel={handleCancelAddProject} />)

@@ -1,5 +1,5 @@
 import deleteIcon from "/src/assets/delete.svg";
-export default function ProjectDetails({ project }) {
+export default function ProjectDetails({ project, onDeleteProject }) {
   const formattedDate = new Date(project.dueDate).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -13,7 +13,7 @@ export default function ProjectDetails({ project }) {
         <h1 className="text-3xl font-bold text-green-800 mb-2">
           {project.title}
         </h1>
-        <button className="cursor-pointer  transition-transform duration-200 hover:scale-110 active:scale-90">
+        <button onClick={onDeleteProject} className="cursor-pointer  transition-transform duration-200 hover:scale-110 active:scale-90">
   <img src={deleteIcon} className="w-6 h-6 " alt="Delete" />
 </button>      </div>
       <p className="mb-4 text-stone-400">{formattedDate}</p>
