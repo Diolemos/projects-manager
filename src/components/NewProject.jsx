@@ -29,6 +29,7 @@ export default function NewProject({ onSave, onCancel }) {
       dueDate: enteredDueDate,
     });
   };
+ const today = new Date().toISOString().split("T")[0]
 
   return (
     <>
@@ -56,7 +57,7 @@ export default function NewProject({ onSave, onCancel }) {
         <div>
           <Input ref={title} label="Title" />
           <Input ref={description} label="Description" textarea />
-          <Input ref={dueDate} type="date" label="Due Date" />
+          <Input ref={dueDate} type="date" label="Due Date" min={today} />
         </div>
       </div>
     </>
